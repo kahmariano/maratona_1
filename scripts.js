@@ -122,7 +122,7 @@ const DOM = {
           
               <td>
           
-                <img onclic="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação" >
+                <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação" >
               </td>
         `
 
@@ -158,9 +158,9 @@ const Utils = {
 
   formatAmount(value) {
 
-    value = Number(value.replace(/\,\,/g, "")) * 100
+    value = value * 100
 
-    return value
+    return Math.round(value)
 
   },
 
@@ -264,7 +264,6 @@ const Form = {
       //ja esta atualizando la em cima 
 
     } catch (error) {
-      console.log(error)
 
       alert(error.message)
 
